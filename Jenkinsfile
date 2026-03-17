@@ -20,12 +20,6 @@ pipeline {
             }
         }
 
-        stage('Tag Image') {
-            steps {
-                sh 'docker tag devops-app:latest $ECR_REPO:latest'
-            }
-        }
-
         stage('Push to ECR') {
             steps {
                 sh '''
